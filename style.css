@@ -26,6 +26,7 @@ body{
 /* Header + Main navigation */
 
 header{
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     padding: 15px 0;
@@ -128,6 +129,7 @@ h1{
 }
 h2{
     font-size: 3em;
+    margin: 0.8em 0 0.3em;
 }
 
 @media (max-width: 990px){
@@ -175,11 +177,12 @@ h2{
     grid-row: 1 / -1;
     background-image: url(ingmar-i-hCaOXEzpU-unsplash.jpg);
     background-size: cover;
+    margin-right: -5vw;
 }
 
-@media( min-width: 1200px ){
+@media( min-width: 1332px ){
     .top-banner .grid-container > div:last-of-type{
-        margin-right: calc( (98.5vw - 1200px) / -2 );
+        margin-right: calc( (100vw - 1200px) / -2 );
     }
 }
 
@@ -195,6 +198,7 @@ h2{
 @media(max-width: 560px){
     .top-banner .grid-container > div:first-child{
         grid-column: 1 / -1;
+        padding: 30px;
     }
 }
 
@@ -229,7 +233,7 @@ h2{
 
 .wide-with{
     width: 1200px;
-    max-width: 95%;
+    max-width: 90vw;
     margin-left: auto;
     margin-right: auto;
 }
@@ -272,9 +276,9 @@ th, td{
     text-align: center;
 }
 
-@media(max-width: 1200px){
+@media(max-width: 1332px){
     .row-one .grid-container{
-        height: calc( 95vw / 2 );
+        height: calc( 87vw / 2 );
     }
 }
 
@@ -284,7 +288,7 @@ th, td{
         margin-bottom: 100px;
     }
     .row-one .grid-container{
-        height: 95vw;
+        height: 87vw;
     }
 }
 
@@ -313,6 +317,7 @@ th, td{
     box-sizing: border-box;
     padding: 30px;
     background-color: rgba(255,255,255,0.2);
+    border: 1px solid;
 }
 
 /* Image */
