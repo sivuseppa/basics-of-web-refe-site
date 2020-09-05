@@ -277,6 +277,10 @@ th, td{
 }
 
 @media(max-width: 990px){
+    .row{
+        padding-top: 100px;
+        margin-bottom: 100px;
+    }
     .row-one .grid-container{
         height: 95vw;
     }
