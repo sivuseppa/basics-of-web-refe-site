@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mikon refesivusto</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-nav-container wide-with">
+
+            <div class="logo-container">
+                <a href="#"><img src="logo.svg" alt="refesaitin logo"></a>
+            </div>
+
+            <nav id="navigation" class="main-nav">
+                <button class="menu-toggle hamburger-icon" aria-controls="primary-menu" aria-label="avaa valikko" aria-expanded="false">
+                    <img src="bars-solid.svg" alt="menu icon">
+                </button>
+                <a class="menu-item" tabindex="1" href="#grid-scroll-achor">Gridi</a>
+                <a class="menu-item" tabindex="1" href="#table-scroll-achor">Listat ja taulukko</a>
+                <a class="menu-item" tabindex="1" href="#img-scroll-achor">Kuva ja Oject Fit</a>
+                <a class="menu-item" tabindex="1" href="#footer-scroll-achor">Footer ja yhteystiedot</a>
+            </nav>
+
+            <script>
+                var menuContainer = document.getElementById( 'navigation' );
+                var hamburgerButton = menuContainer.getElementsByTagName( 'button' )[ 0 ];
+
+                hamburgerButton.addEventListener( 'click', changeToggle );
+
+                function changeToggle(){
+                    if ( ! menuContainer.classList.contains('toggled') ) {
+                        menuContainer.classList.add( 'toggled' );
+                    } else {
+                        menuContainer.classList.remove( 'toggled' );
+                    }
+                }
+
+                // Listen all clicks on the menu and close mobile menu after clicking .menu-item
+
+                menuContainer.addEventListener('click', changeToggleByClick );
+                
+                function changeToggleByClick(event) {
+
+                    var clickedElem = event.target;
+
+                    if (!event.target.closest('.menu-item')) return;
+                    menuContainer.classList.remove( 'toggled' );
+                }
+
+            </script>
+        </div>
+    </header>
+
+    <div class="site-main-content">
+
+        <div class="top-banner full-width">
+            <div class="grid-container wide-with">
+                <div>
+                    <h1>Terve Pölkki, tässä html- ja css-refe!</h1>
+                    <p>Täällä on pitkin poikin erilaisia elementtejä, joita on hyvä osata käyttää webbidevauksessa.</p>
+                </div>
+                <div></div>
+            </div>
+        </div>
+
+        <div id="grid-scroll-achor" class="flex-container wide-with row row-one">
+            <div class="grid-container">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div>Let's hover or tap!</div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div>
+                <h2>Alkunäkymässä on yhdenlainen grid ja tässä on toisenlainen</h2>
+                <p>Gridin ruudukon voi määrittää muutamalla eri tavalla, toisessa lähtökohtana ovat rivit ja kolumnit ja toisessa nimetyt alueet. Rivejä voi myös nimetä haluamallaan tavalla, vaikka täällä tyydyinkin mellko tylsiin perusasetuksiin.</p>
+                <h2>FlexBox</h2>
+                <p>Flexbox on käytössä yläpalkissa ja näissä row-elementeissä. Sillä saa kätevästi rakennettua responsiivisuutta.</p>
+
+            </div>
+        </div>
+
+        <div id="table-scroll-achor" class="row-two-container full-width">
+            <div class="flex-container wide-with row row-two">
+                <div class="grid-container">
+                    <h2>Erilaiset listaelementit ja taulukko</h2>
+                    <p>Listat on ihan ok-kivoja, taulukot ei niinkään, vaikka kai niitäkin jossain on pakko joskus käyttää, jos joku pakottaa</p>
+                </div>
+                <div class="list-container">
+                    <h3>Ul-lista</h3>
+                    <ul>
+                        <li>listataan</li>
+                        <li>ul eli unordered eli pallerolistaan</li>
+                        <li>asioita</li>
+                    </ul>
+                    <h3>Ol-lista</h3>
+                    <ol>
+                        <li>sitten listataan</li>
+                        <li>ol eli ordered eli listaan jossa järjestysnumerot</li>
+                        <li>asioita</li>
+                    </ol>
+                    <h3>Taulukko</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <tr>
+                                <th>Otsikko</th>
+                                <th>Otsikko</th>
+                                <th>Otsikko</th>
+                                <th>Otsikko</th>
+                                <th>Otsikko</th>
+                                <th>Otsikko</th>
+                                <th>Otsikko</th>
+                                <th>Otsikko</th>
+                                <th>Otsikko</th>
+                                <th>Otsikko</th>
+                                <th>Otsikko</th>
+                                <th>Otsikko</th>
+                            </tr>
+                            </tr>
+                            <tr>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                            </tr>
+                            <tr>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                                <td>Solu</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="img-scroll-achor" class="flex-container wide-with row row-three">
+            <div class="img-container">
+                <img class="obj-fit" src="ingmar-i-hCaOXEzpU-unsplash.jpg" alt="">
+            </div>
+            <div>
+                <h2>Kuvan responsiivisuus ja object fit</h2>
+                <p>Object fit on mun mielestä kätevä tapa kuvien responsiivisuuden hallintaan.</p>
+                <h2>Mobiilivalikko</h2>
+                <p>Mobiilivalikon avautumista hallitaan JavaScriptin avulla, jolla asetetaan valikolle css-luokka hampurilaispainiketta painettaessa. Lisäksi haistellaan valikkopainikkeisiin kohdistuvia klikkauksia, jotta valikko ei jäisi sojottamaan avonaisena.</p>
+            </div>
+        </div>
+
+    </div> <!-- site-main-content -->
+
+    <footer id="footer-scroll-achor">
+        <div>
+            <h2>Nastaa, footerissa ollaan :)</h2>
+            <p>Tämä saitti on referenssityö ja tämä footer-elementti on semanttinen html-elementti. Semanttisia elementtejä on tällä sivustolla muitakin, kuten header ja nav. </p>
+            <h2>Yhteystiedot</h2>
+            <p>Mikko Mörö<br>040 739 2413<br><a href="mailto:mikko@sivuseppa.fi">mikko@sivuseppa.fi</a></p>
+        </div>
+    </footer>
+</body>
+</html>

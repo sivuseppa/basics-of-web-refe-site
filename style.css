@@ -1,0 +1,336 @@
+/*
+
+Fancy styles for the reference site by Mikko
+
+- html + boby
+- Header + Main navigation
+- Mobile Menu
+- Typography
+- Top Banner
+- Main Elements
+- Rows
+- Image
+- Footer
+
+*/
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+
+/* Header + Main navigation */
+
+header{
+    position: sticky;
+    top: 0;
+    padding: 15px 0;
+    background-color: white;
+    z-index: 99;
+}
+
+.logo-nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container img{
+    display: block;
+}
+
+.main-nav{
+    max-height: 80px;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+
+nav{
+    display: flex;
+}
+
+nav a{
+    display:inline-block;
+    padding: 10px;
+    margin-left: 20px;
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    color: black;
+}
+nav a:hover {
+    outline: 1px dashed #000;
+    outline-offset: -1px;
+}
+nav a:active, nav a:focus {
+    outline: 1px dashed #000;
+    outline-offset: -1px;
+    opacity: 0.5;
+}
+
+/* Mobile Menu */
+
+.menu-toggle{
+    display: none;
+}
+
+.hamburger-icon img{
+    width: 30px;
+    display: block;
+}
+
+@media(max-width: 990px) {
+    .logo-container {
+        align-self: flex-start;
+    }
+    .menu-toggle{
+        display: block;
+        width: fit-content;
+        align-self: flex-end;
+    }
+    .main-nav a {
+        display: none;
+    }
+    .main-nav a:first-of-type {
+        margin-top: 20px;
+    }
+    .main-nav.toggled {
+        display: flex;
+        flex-direction: column;
+        max-height: 80vh;
+        transition: max-height 1s;
+    }
+    .main-nav.toggled a{
+        display: block;
+    }
+}
+
+/*  Typography */
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1{
+    font-size: 5em;
+    margin: 0.3em 0;
+}
+h2{
+    font-size: 3em;
+}
+
+@media (max-width: 990px){
+    h1 {
+        font-size: calc(38px + (68 - 36) * ((100vw - 320px) / (1200 - 320)));
+    }
+    h2 {
+        font-size: calc(24px + (48 - 24) * ((100vw - 320px) / (1200 - 320)));
+    }
+}
+
+
+/*  Top Banner  */
+
+.top-banner{
+    background-color: #f3f3f3;
+}
+
+.top-banner .grid-container{
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr repeat(3, auto) 1fr;
+    min-height: 800px;
+    position: relative;
+}
+.top-banner .grid-container::after{
+    content: "Täällä ollaan täysin absolutistina...";
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    color: #9e7591;
+}
+
+.top-banner .grid-container > div:first-child{
+    grid-column: 1 / 5;
+    grid-row: 2 / 5;
+    padding: 50px;
+    background-color: rgba(211, 211, 211, 0.7);
+    z-index: 1;
+    position: relative;
+}
+.top-banner .grid-container > div:last-of-type{
+    grid-column: 4 / -1;
+    grid-row: 1 / -1;
+    background-image: url(ingmar-i-hCaOXEzpU-unsplash.jpg);
+    background-size: cover;
+}
+
+@media( min-width: 1200px ){
+    .top-banner .grid-container > div:last-of-type{
+        margin-right: calc( (98.5vw - 1200px) / -2 );
+    }
+}
+
+@media(max-width: 768px){
+    .top-banner .grid-container{
+        min-height: 600px;
+    }
+
+    .top-banner .grid-container > div:first-child{
+        grid-column: 1 / 6;
+    }
+}
+@media(max-width: 560px){
+    .top-banner .grid-container > div:first-child{
+        grid-column: 1 / -1;
+    }
+}
+
+/*  Main Elements */
+
+.site-main-content{
+    overflow: hidden;
+}
+
+.grid-container{
+    display: grid;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-container > div{
+    width: 48%;
+}
+
+@media(max-width: 990px){
+    .flex-container{
+        flex-direction: column;
+    }
+    .flex-container > div{
+        width: 100%;
+    }
+}
+
+.wide-with{
+    width: 1200px;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-width{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-wrapper{
+    overflow-x:auto;
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    max-width: 100%;
+}
+
+th, td{
+    padding: 10px 15px;
+    border: 1px solid;
+}
+
+/* Rows */
+
+.row{
+    padding-top: 150px;
+    margin-bottom: 150px;
+}
+
+.row-one .grid-container{
+    grid-template-areas: 
+            "a b c"
+            "d e f"
+            "g h i";
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 580px;
+    text-align: center;
+}
+
+@media(max-width: 1200px){
+    .row-one .grid-container{
+        height: calc( 95vw / 2 );
+    }
+}
+
+@media(max-width: 990px){
+    .row-one .grid-container{
+        height: 95vw;
+    }
+}
+
+.row-one .grid-container > div{
+    align-self: center;
+    justify-self: center;
+    color: #9e7591;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.row-one .grid-container div:nth-child(even){
+    background-color: #9e7591;
+    width: 100%;
+    height: 100%;
+}
+
+.row-one .grid-container:hover > div:first-child{
+    grid-area: i;
+}
+
+.row-two-container{
+    padding-bottom: 1px;
+    background-color: rgba(211, 211, 211, 0.7);
+}
+.list-container{
+    box-sizing: border-box;
+    padding: 30px;
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* Image */
+
+.obj-fit{
+    height: 500px;
+    max-height: 65vw;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*  Footer  */
+
+footer{
+    text-align: center;
+    padding: 100px 30px;
+    background-color: #585371;
+    color: white;
+}
+footer > *{
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+footer a{
+    color: #e2c691;
+}
