@@ -75,6 +75,8 @@ nav a:active, nav a:focus {
 
 .menu-toggle{
     display: none;
+    background-color: white;
+    border: none;
 }
 
 .hamburger-icon img{
