@@ -26,7 +26,6 @@ body{
 /* Header + Main navigation */
 
 header{
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     padding: 15px 0;
