@@ -12,46 +12,19 @@
         <div class="logo-nav-container wide-with">
 
             <div class="logo-container">
-                <a href="#"><img src="logo.svg" alt="refesaitin logo"></a>
+                <a href="#"><img src="./images/logo.svg" alt="refesaitin logo"></a>
             </div>
 
             <nav id="navigation" class="main-nav">
                 <button class="menu-toggle hamburger-icon" aria-controls="navigation" aria-label="avaa valikko" aria-expanded="false">
-                    <img src="bars-solid.svg" alt="menu icon">
+                    <img src="./images/bars-solid.svg" alt="menu icon">
                 </button>
                 <a class="menu-item" href="#grid-scroll-achor">Gridi</a>
                 <a class="menu-item" href="#table-scroll-achor">Listat ja taulukko</a>
                 <a class="menu-item" href="#img-scroll-achor">Kuva ja Oject Fit</a>
                 <a class="menu-item" href="#footer-scroll-achor">Footer ja yhteys</a>
             </nav>
-
-            <script>
-                var menuContainer = document.getElementById( 'navigation' );
-                var hamburgerButton = menuContainer.getElementsByTagName( 'button' )[ 0 ];
-
-                hamburgerButton.addEventListener( 'click', changeToggle );
-
-                function changeToggle(){
-                    if ( ! menuContainer.classList.contains('toggled') ) {
-                        menuContainer.classList.add( 'toggled' );
-                    } else {
-                        menuContainer.classList.remove( 'toggled' );
-                    }
-                }
-
-                // Listen all clicks on the menu and close mobile menu after clicking .menu-item
-
-                menuContainer.addEventListener('click', changeToggleByClick );
-                
-                function changeToggleByClick(event) {
-
-                    var clickedElem = event.target;
-
-                    if (!event.target.closest('.menu-item')) return;
-                    menuContainer.classList.remove( 'toggled' );
-                }
-
-            </script>
+            <script src="./js/nav.js"></script>
         </div>
     </header>
 
@@ -61,7 +34,7 @@
             <div class="grid-container wide-with">
                 <div>
                     <h1>Terve Pölkki, tässä html- ja css-refe!</h1>
-                    <p>Täällä on pitkin poikin erilaisia elementtejä, joita on hyvä osata käyttää webbidevauksessa.</p>
+                    <p>Rakensin tämän saitin sen pohjalta, että täällä olisi nuo vaadittavat elementit. Lisäksi koitin saada homman responsiivuseksi. Tuotantoon menevälle saitille laittaisin kattavammat metatiedot.</p>
                 </div>
                 <div></div>
             </div>
@@ -83,7 +56,7 @@
                 <h2>Alkunäkymässä on yhdenlainen grid ja tässä on toisenlainen</h2>
                 <p>Gridin ruudukon voi määrittää muutamalla eri tavalla, toisessa lähtökohtana ovat rivit ja kolumnit ja toisessa nimetyt alueet. Rivejä voi myös nimetä haluamallaan tavalla, vaikka täällä tyydyinkin mellko tylsiin perusasetuksiin.</p>
                 <h2>FlexBox</h2>
-                <p>Flexbox on käytössä yläpalkissa ja näissä row-elementeissä. Sillä saa kätevästi rakennettua responsiivisuutta.</p>
+                <p>Flexbox on käytevä asettelutyökalu. Se on täällä käytössä yläpalkissa ja näissä row-elementeissä.</p>
 
             </div>
         </div>
@@ -92,7 +65,7 @@
             <div class="flex-container wide-with row row-two">
                 <div>
                     <h2>Erilaiset listaelementit ja taulukko</h2>
-                    <p>Listat on ihan ok-kivoja, taulukot ei niinkään, vaikka kai niitäkin jossain on pakko joskus käyttää, jos joku pakottaa</p>
+                    <p>Listat on ihan ok-kivoja, taulukot ei niinkään, vaikka kai niitäkin jossain on pakko joskus käyttää, jos on pakko.</p>
                     <h2>Positioning</h2>
                     <p>Muutamassa paikassa käytin positioningia. Header on sticky ja yläbannerin vasemmassa alalaidassa majaileee absolut, jonka äitielementti toki sitten relative.</p>
                 </div>
@@ -110,6 +83,7 @@
                         <li>asioita</li>
                     </ol>
                     <h3>Taulukko</h3>
+                    <p>Taulukko on mielestäni hyvä laittaa wrapperiin, joka on asetettu scrollattavaksi.</p>
                     <div class="table-wrapper">
                         <table>
                             <tr>
@@ -162,13 +136,13 @@
 
         <div id="img-scroll-achor" class="flex-container wide-with row row-three">
             <div class="img-container">
-                <img class="obj-fit" src="ingmar-i-hCaOXEzpU-unsplash.jpg" alt="">
+                <img class="obj-fit" src=".images/ingmar-i-hCaOXEzpU-unsplash.jpg" alt="öinen maisema">
             </div>
             <div>
                 <h2>Kuvan responsiivisuus ja object fit</h2>
-                <p>Object fit on mun mielestä kätevä tapa kuvien responsiivisuuden hallintaan.</p>
+                <p>Tykkään käyttää Object Fitiä kuvien kanssa responsiivisuuden hallintaan. Yläbannerin kuva on taas taustakuvana, ja sekin ihan hyvä keino, mutta sen käsittelyssä on omat rajoituksensa.</p>
                 <h2>Mobiilivalikko</h2>
-                <p>Mobiilivalikon avautumista hallitaan JavaScriptin avulla, jolla asetetaan valikolle css-luokka hampurilaispainiketta painettaessa. Lisäksi haistellaan valikkopainikkeisiin kohdistuvia klikkauksia, jotta valikko ei jäisi sojottamaan avonaisena.</p>
+                <p>Mobiilivalikon avautumista halsen JavaScriptin avulla, jolla asetetan valikolle css-luokan hampurilaispainiketta painettaessa. Lisäksi haistelen valikkopainikkeisiin kohdistuvia klikkauksia, jotta valikko ei jäisi sojottamaan avonaisena. Smooth scrollin on määrittelin css:llä, eikä taida toimia Safarilla.</p>
             </div>
         </div>
 

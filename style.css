@@ -42,6 +42,7 @@ header{
 
 .logo-container img{
     display: block;
+    max-width: 36vw;
 }
 
 .main-nav{
@@ -96,6 +97,7 @@ nav a:active, nav a:focus {
     }
     .main-nav a {
         display: none;
+        font-size: 1.3em;
     }
     .main-nav a:first-of-type {
         margin-top: 20px;
@@ -175,7 +177,7 @@ h2{
 .top-banner .grid-container > div:last-of-type{
     grid-column: 4 / -1;
     grid-row: 1 / -1;
-    background-image: url(ingmar-i-hCaOXEzpU-unsplash.jpg);
+    background-image: url(./images/ingmar-i-hCaOXEzpU-unsplash.jpg);
     background-size: cover;
     margin-right: -5vw;
 }
